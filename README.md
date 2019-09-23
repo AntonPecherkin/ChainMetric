@@ -6,7 +6,7 @@
 
 <ol type="1" style="font-size: x-large;">
 <li> [About](#about)
-<li> [Blind identity management](#blind-identity-management)
+<li> [Blockchains performance](#blockchains-performance)
 <li> [Solution](#solution)
 <ol type="a" style="font-size: large;">
   <li> [User application](#user-application)
