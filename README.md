@@ -6,21 +6,17 @@
 
 <ol type="1" style="font-size: x-large;">
   <li> <a href="https://github.com/AntonPecherkin/ChainMetric#about">About</a>
-  <li> [Blockchains performance](#blockchains-performance)
-  <li> [Solution](#solution)
+  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#blockchains-performance">Blockchains performance</a>
+  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#solution">Solution</a>
 <ol type="a" style="font-size: large;">
-  <li> [User application](#user-application)
-  <li> [NuCypher encryption](#nucypher-encryption)
-  <li> [IPFS](#ipfs)
-  <li> [A hidden pixel](#a-hidden-pixel)
+  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#user-application">User application</a>
+  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#exonum-blockchain">Exonum blockchain</a>
+  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#fantom-blockchain">Fantom blockchain</a>
+  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#blockchain-comparison">Blockchain comparison</a>
 </ol>
-<li> [Installation](#installation)
-<ol type="a" style="font-size: large;">
-  <li> [Web application](#web-application)
-  <li> [Mobile application](#android-application)
-</ol>
-<li> [Finally](#finally)
-<li> [Team](#team)
+<li> <a href="https://github.com/AntonPecherkin/ChainMetric#installation">Installation</a>
+<li> <a href="https://github.com/AntonPecherkin/ChainMetric#finally">Finally</a>
+<li> <a href="https://github.com/AntonPecherkin/ChainMetric#team">Team</a>
 </ol>
 
 # About
@@ -41,7 +37,7 @@ Our product allows you to:
 - Be sure that the information is reliably protected and accessible only to the right people for a certain time. To do this, use NuCypher encryption, data storage in IPFS and the use of a hidden pixel for marking your own documents and protecting against copying on the network.
 - Share documents with the right people for a certain time using NuCypher technology
 
-# Blind identity management
+# Blockchains performance
 
 - Identity Management Service must be created using KMS NuCypher. 
 - IDs can be encrypted on the client side and stored with the identity management provider. 
