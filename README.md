@@ -139,6 +139,14 @@ Mysteriously, however, if the two grids are overlaid correctly, at just the righ
 
 <p align="center"><img src="images/im2.png"></p>
 
+# Blockchain comparison
+
+At this stage, we use rust to generate svg and in a convenient human-readable form to track the key parameters of the blockchain, namely: number of nodes, TPS , time to finality, CPU usage, memory usage, disk usage. The program reads these parameters from the logging that generate blockchains. An example of what a picture with generated data looks like:
+
+<p align="center"><img src="images/svg.png"></p>
+
+More information: [A hidden pixel](#a-hidden-pixel)
+
 # Installation
 Requirements:
 1. Python >=3.6
@@ -184,13 +192,7 @@ Launch Android application - button “cypher info” sending information to the
 
 More information: [A hidden pixel](#a-hidden-pixel)
 
-# Automatic SVG generation
 
-At this stage, we use rust to generate svg and in a convenient human-readable form to track the key parameters of the blockchain, namely: number of nodes, TPS , time to finality, CPU usage, memory usage, disk usage. The program reads these parameters from the logging that generate blockchains. An example of what a picture with generated data looks like:
-
-<p align="center"><img src="images/button.png"></p>
-
-More information: [A hidden pixel](#a-hidden-pixel)
 
 
 # Finally
