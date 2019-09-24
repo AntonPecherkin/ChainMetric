@@ -184,6 +184,15 @@ Launch Android application - button “cypher info” sending information to the
 
 More information: [A hidden pixel](#a-hidden-pixel)
 
+# Automatic SVG generation
+
+At this stage, we use rust to generate svg and in a convenient human-readable form to track the key parameters of the blockchain, namely: number of nodes, TPS , time to finality, CPU usage, memory usage, disk usage. The program reads these parameters from the logging that generate blockchains. An example of what a picture with generated data looks like:
+
+<p align="center"><img src="images/button.png"></p>
+
+More information: [A hidden pixel](#a-hidden-pixel)
+
+
 # Finally
 
 **CryptoBox** is a complete product for safe storage of your documents in one place and convenient use.
