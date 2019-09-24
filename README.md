@@ -143,7 +143,7 @@ Mysteriously, however, if the two grids are overlaid correctly, at just the righ
 
 At this stage, we use rust to generate svg and in a convenient human-readable form to track the key parameters of the blockchain, namely: number of nodes, TPS , time to finality, CPU usage, memory usage, disk usage. The program reads these parameters from the logging that generate blockchains. An example of what a picture with generated data looks like:
 
-<p align="center"><img src="images/svg.png"></p>
+<p align="center"><img src="svg.png"></p>
 
 More information: [A hidden pixel](#a-hidden-pixel)
 
