@@ -5,9 +5,9 @@
 # Structure
 
 <ol type="1" style="font-size: x-large;">
-<li> [About](#about)
-<li> [Blockchains performance](#blockchains-performance)
-<li> [Solution](#solution)
+  <li> <a href="https://github.com/AntonPecherkin/ChainMetric#about">About</a>
+  <li> [Blockchains performance](#blockchains-performance)
+  <li> [Solution](#solution)
 <ol type="a" style="font-size: large;">
   <li> [User application](#user-application)
   <li> [NuCypher encryption](#nucypher-encryption)
