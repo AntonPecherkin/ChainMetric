@@ -20,29 +20,16 @@
 </ol>
 
 # About
-We are team **StartBlock** and we have solved the **Blind identity management** NuCypher task on the Serial Hacking Winter.
+We are team **StartBlock** and we solved the **Blockchain Metric**  Fantom task on the Serial Hacking Grand Final.
 
-We introduce the **CryptoBox** product - storing copies of documents in one protected place, with the ability to share them with the right person in a safe way using NuCypher technology.
+Today there are several problems with evaluating blockchain performance:
 
-<a href="https://youtu.be/dokIcADnnC0">Video-presentation of the Cryptobox</a>
-
-Today there are the following problems:
-- All the necessary documents are not at hand in the right situation, so we spend time in document search situations
-- We need to store information about all documents from fraudsters very securely and check documents for originality.
-- Many organizations ask for identity documents only for a while, after which access to the document should be closed
-- Leaking documents into the network can be a disaster for everyone.
-
-Our product allows you to:
-- Keep copies of documents in one place and always at hand for the user
-- Be sure that the information is reliably protected and accessible only to the right people for a certain time. To do this, use NuCypher encryption, data storage in IPFS and the use of a hidden pixel for marking your own documents and protecting against copying on the network.
-- Share documents with the right people for a certain time using NuCypher technology
+- Cecurity
+- Reliability
+- Speed
 
 # Blockchains performance
 
-- Identity Management Service must be created using KMS NuCypher. 
-- IDs can be encrypted on the client side and stored with the identity management provider. 
-- Users can create re-encryption keys for third-party applications. 
-- The service provides access to user credentials by application keys. 
 
 # Solution
 
@@ -76,123 +63,39 @@ Next, we consider the main blocks of our solution and their technical implementa
 
 # User application
 
-Our project is implemented in two forms: both web and mobile application.
-You can use the web application simply by following the link:
+# Exonum blockchain
 
-<p align="center">
-<a href="http://cryptobox.site:5000"><img src="images/Logo_CryptoBox.png"></a>
-</p>
+Exonum provides a reliable blockchain creation framework, that can be used as in our example.
+We start several nodes which log information into log files. 
 
-Detailed installation instructions are given in the <a href="#installation">“Installation”</a> section.
+Our next stage code process the information from logs and generate svg files.
 
-Let's take a look at how the application works:
+Exonum shows good performance on a local machine with nodes communication over localhost network.
 
-1. First, we go to your personal account.
-2. In the personal account, we see all the documents available to us. Documents are stored using IPFS, thereby achieving complete decentralization.
-3. We can add a new document by uploading a file. When downloading the file is placed in a decentralized repository - IPFS. NuCypher encryption algorithm is applied to the file and it becomes accessible only to the user. The user identification algorithm is also applied to the file, a secret pixel is generated and embedded, which contains information about the user.
-4. We can share any document by specifying the recipient's public key and the number of hours to access the document. Using NuCypher technology, the specified user is granted temporary access to the document.
+TPS is several hundred transactions for small number of nodes. 
+Consensus time is about 0.01 seconds for small number of nodes.
 
-You can watch a video demonstration of the product: 
+# Fantom blockchain
 
-https://youtu.be/dhlp8EE5vw4
+Fantom blockchain can be easily configured for interaction with our svg-generation code.
 
-# NuCypher encryption
-
-NuCypher leverages the power of proxy re-encryption to bring private data to public blockchains. How does it work? 
-
-<p align="center">
-<a href="https://www.nucypher.com/" target="_blank"><img src="images/nucypher-enc.jpg" width="500px"></a>
-</p>
-
-1. Alice, the data owner, encrypts data with her public key and uploads it to IPFS, Swarm, S3, or any supported storage layer. To delegate access to valid recipients, she creates and uploads re-encryption keys to the NuCypher network.
-2. Ursula, a miner, receives the re-encryption keys and stands ready to re-key data. She provides this service in exchange for payment in fees and block rewards. The NuCypher network and the storage layer never have access to Alice's plaintext data.
-3. Bob, a valid recipient, sends an access request to the NuCypher network. If a valid re-encryption key exists and specified conditions are met, the data is re-keyed to his public key and he is able to decrypt with his private key.
-
-# IPFS
-
-IPFS is a distributed system for storing and accessing files, websites, applications, and data, so, we use this technology as a data storage in our project. It’s a peer-to-peer (p2p) filesharing system that aims to fundamentally change the way information is distributed across & beyond the globe. IPFS consists of several innovations in communication protocols and distributed systems that have been combined to produce a file system like no other.
-
-For install IPFS on local machine you need:
-1. Download <a href="https://dist.ipfs.io/#go-ipfs" target="_blank">IPFS for your platform</a>
-2. tar xvfz go-ipfs.tar.gz
-3. cd go-ipfs
-4. ./install.sh
-
-For run:
-1. ipfs init
-2. ipfs daemon
-
-# A hidden pixel
-
-Problem: when opening access to a particular file, there is often a problem with the leakage of information into the network. For example, we provide access to a passport, a fraudulent organization, and it can put these documents on some other resource. To combat this problem, we can use visual encryption, encrypting in the image information about to whom we provide this information, in case of leakage, we can easily determine who the data were laid out.
-
-VCWithoutPixelExpansion, VCSecure - folders for encrypting and decrypting an image.
-
-Visual Cryptography is a technique that allows information (images, text, diagrams …) to be encrypted using an encoding system that can be decrypted by the eyes. It does not require a computer to decode.
-The technique is attributed to two great mathematicians: Moni Naor and Adi Shamir, in 1994. In this implementation, I will show how to split a secret message into two components. Both parts are necessary to reconstruct and reveal the secret, and the possession of either one, alone, is useless in determining the secret.
-
-<p align="center"><img src="images/im1.png"></p>
-
-The basis of the technique is the superposition (overlaying) of two semi-transparent layers. Imagine two sheets of transparency covered with a seemingly random collection of black pixels.
-Individually, there is no discernable message printed on either one of the sheets. Overlapping them creates addition interference to the light passing through (mathematically the equivalent of performing a Boolean OR operation with the images), but still it just looks like a random collection of pixels.
-Mysteriously, however, if the two grids are overlaid correctly, at just the right position, a message magically appears! The patterns are designed to reveal a message
-
-<p align="center"><img src="images/im2.png"></p>
+The timestamped transaction information needs to be logged in files which then will be processed to generate svg.
 
 # Blockchain comparison
 
-At this stage, we use rust to generate svg and in a convenient human-readable form to track the key parameters of the blockchain, namely: number of nodes, TPS , time to finality, CPU usage, memory usage, disk usage. The program reads these parameters from the logging that generate blockchains. An example of what a picture with generated data looks like:
-
-<p align="center"><img src="svg.png"></p>
-
-More information: [A hidden pixel](#a-hidden-pixel)
+# Blockchain comparison
 
 # Installation
 Requirements:
-1. Python >=3.6
-2. Flask
-3. Ipfs 
+1. rust
+2. exonum
+3. fantom
 
-For local installation you need to run following commands (from nucypher directory): 
-1. pipenv install --dev --three --skip-lock --pre
-2. pipenv install flask
-3. pipenv install ipfsapi
-4. pipenv run python3.7 run examples/finnegans-wake-demo/finnegans-wake-concise-demo.py
-
-For the application to work correctly, the ipfs daemon must be running (cmd ipfs daemon). 
-
-# Web application
-
-Web-version of project is available by link: http://cryptobox.site:5000/
-<p>You can authorize without password only by login. We implemented to cases:</p>
-
-1. Alice authorization 
-2. Bob and another names authorization
-
-<p>With Alice authorization you can upload files and share them for another users. With Bob authorization you can only read files, which were shared by Alice.</p> 
-Example of Bob authorization: 
-
-<p align="center">
-<a href="http://cryptobox.site:5000/" target="_blank"><img src="images/cryptobox-web.png" width="600px"></a>
-</p>
-
-
-# Mobile application
-
-Requirements: '
-1. Android 2.0
-2. JDK Java 10.0
-
-Download Android Studio, JDK and Project and click on <img src="images/run.png"> to run the project.
-Launch Android application - button “cypher info” sending information to the server, uploading files to ipfs. Work is similar to work with web
- 
-<p align="center"><img src="images/button.png"></p>
-
-“Take picture with sign” button - encrypts images to check for whom the file was provided. According to this algorithm, the picture is encrypted using the method of visual cryptography (pixels are superimposed on each other). Each time, encryption takes a unique form - so that in the future it can be easily determined who posted the information about this picture (which of the companies that were granted access)
-
-More information: [A hidden pixel](#a-hidden-pixel)
-
-
+For running nodes on your local machine
+1. cd backend
+2. cargo insstall --path .
+3. ./launch.sh %number of nodes%
+4. Open a browser at address stated in terminal
 
 
 # Finally
