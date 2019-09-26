@@ -87,7 +87,7 @@ The timestamped transaction information needs to be logged in files which then w
 
 # Installation
 Requirements:
-1. rust
+1. rustc 1.39.0-nightly (97e58c0d3 2019-09-20)
 2. exonum
 3. fantom
 
