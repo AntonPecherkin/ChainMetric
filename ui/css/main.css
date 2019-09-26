@@ -1,0 +1,10 @@
+#input {
+    margin-top: 30%;
+    width: 60%;
+}
+.btn-color {
+    background: #489e29;
+}
+.btn-color:hover {
+    background: #266e26;
+}
