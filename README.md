@@ -55,6 +55,8 @@ The timestamped transaction information needs to be logged in files which then w
 
 # Blockchain comparison
 
+At this stage, we use rust to generate svg and in a convenient human-readable form to track the key parameters of the blockchain, namely: number of nodes, TPS , time to finality, CPU usage, memory usage, disk usage. The program reads these parameters from the logging that generate blockchains. 
+
 # Installation
 Requirements:
 1. rustc 1.39.0-nightly (97e58c0d3 2019-09-20)
